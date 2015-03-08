@@ -5,8 +5,8 @@ CONFIG -= qt
 
 
 INCLUDEPATH += ../../common_portable_headers/native/inc
-INCLUDEPATH += /nix/store/g85fla31jhmm0ckfwgsclcvrh2ack9zf-oraclejdk-7u71/include/
-INCLUDEPATH += /nix/store/g85fla31jhmm0ckfwgsclcvrh2ack9zf-oraclejdk-7u71/include/linux/
+INCLUDEPATH += ../../../myavn/src/openjdk
+INCLUDEPATH += ../../../myjdktop/myjdk/src/java.base/share/native/include
 
 
 include(deployment.pri)

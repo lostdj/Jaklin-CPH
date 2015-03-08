@@ -28,6 +28,7 @@
 
 
 //
+#if _cph_cpp
 #if !defined(_cph_cfg_basic_szof_check) || _cph_cfg_basic_szof_check
 	#include "./../debug_assert_static.h"
 	namespace cph
@@ -56,6 +57,7 @@
 			}
 		}
 	}
+#endif
 #endif
 
 #endif // #ifndef _cph_h__config_cph_2

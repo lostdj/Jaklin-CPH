@@ -82,9 +82,10 @@ namespace cph
 							(cph::debug::print_simple::cph__private::stderr)
 
 					#elif _cph_os_ems
-
-						struct _IO_FILE {};
-						typedef struct _IO_FILE FILE;
+						#ifndef stdout
+							struct _IO_FILE {};
+							typedef struct _IO_FILE FILE;
+						#endif
 
 						// Ugh.
 						#define stdout_orig stdout
@@ -93,8 +94,8 @@ namespace cph
 						#undef stderr
 						extern "C" FILE* const stdout; FILE* const std_out_cph = stdout;
 						extern "C" FILE* const stderr; FILE* const std_err_cph = stderr;
-						//#define stdout stdout_orig
-						//#define stderr stderr_orig
+						#define stdout stdout_orig
+						#define stderr stderr_orig
 
 						#define _cph_private_debug_print_simple_stdout \
 							(cph::debug::print_simple::cph__private::std_out_cph)
